@@ -52,6 +52,11 @@ def write_jsons():
     vps = open(vex_project_settings_path, "w")
     vex_project_settings_json = '{\n\t"extension": {\n\t\t"version": "0.6.0",\n\t\t"json": 2\n\t},\n\t"project": {\n\t\t"name": "' + '",\n\t\t"description": "",\n\t\t"creationDate": "",\n\t\t"platform": "V5",\n\t\t"language": "python",\n\t\t"slot": 1,\n\t\t"sdkVersion": "V5_1_0_1_25",\n\t\t"python": {\n\t\t\t"main": "compiled/main.py"\n\t\t}\n\t}\n}'
     vps.write(vex_project_settings_json)
-
+def make_compiled_folder():
+    # Make .vscode folder
+    compiled_path = "compiled"
+    if not os.path.isdir(compiled_path) : os.mkdir(compiled_path)
+    
+make_compiled_folder()
 write_jsons()
 
